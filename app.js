@@ -122,17 +122,6 @@ app.use((req,res,next)=>{
      
  
 
-    app.all("*",(req,res,next)=>{
-        next(new expressError(404, "page is Not  Found!"));
-    })
-
-            //   middleWare 
- app.use((err,req,res,next)=>{
-   let {statusCode = 500 , message = "Something went wrong!"} = err;
-   res.render("Error.ejs", {err});
- })
-
-
 
 app.listen(port, ()=>{
     console.log(`server is listen to port ${port}`);
